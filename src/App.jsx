@@ -2,20 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import NavbarWithStyling from './components/navbar/NavbarWithStyling.module.css';
-
-function Navbar() {
-  return (
-    <div>
-      <h1>FSW 2</h1>
-      <ul>
-        <li>About Me</li>
-        <li>FAQ</li>
-        <li>Logout</li>
-      </ul>
-    </div>
-  );
-}
+import NavbarWithStyling from './components/navbar/NavbarWithStyling';
+import HoverButton from './components/button/HoverButton';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,7 +11,6 @@ function App() {
 
   return (
     <>
-      {<Navbar />}
       <NavbarWithStyling
         menu={listMenu}
         name="Student"
@@ -41,8 +28,12 @@ function App() {
         age="20"
         address="Jakarta"
       />
+
+      <HoverButton>
+        <p>TEST CHILDREN</p>
+      </HoverButton>
     </>
   )
 }
 
-export default App
+export default App;
