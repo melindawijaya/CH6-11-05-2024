@@ -4,17 +4,15 @@ import About from "../about/About";
 import HoverButton from "../button/HoverButton";
 
 const NavbarWithStyling = ({ menu, name, age, address}) => {
-  // const [list, setList] = useState("");
   let list;
-  // let biodata = {};
-  const [biodata, setBiodata] = useState({})
+  let biodata = {};
+  const [biodata2, setBiodata2] = useState({})
 
   if (menu) {
-    console.log("test")
     list = (
       <ul className={styles.list}>
         <li className={styles.item}>
-          <a href="#" className={styles.list}>\
+          <a href="#" className={styles.list}>
             Home
           </a>
         </li>
@@ -24,7 +22,7 @@ const NavbarWithStyling = ({ menu, name, age, address}) => {
           </a>
         </li>
         <li className={styles.item}>
-          <a href="#" className={styles.item}>
+          <a href="#" className={styles.link}>
             Logout
           </a>
         </li>
@@ -36,13 +34,22 @@ const NavbarWithStyling = ({ menu, name, age, address}) => {
 
   function handleTriggerSelect(selectedStudent) {
     console.log("ke trigger " + selectedStudent);
-    setBiodata ({
+    setBiodata2 ({
       ...biodata,
       name,
       age,
       address
     });
+    biodata = {
+      ...biodata,
+      name,
+      age,
+      address
+    };
   }
+
+  console.log(biodata);
+  console.log("COMPONENT RENDER ?");
 
   return (
     <>
@@ -53,7 +60,7 @@ const NavbarWithStyling = ({ menu, name, age, address}) => {
             &times;
           </button> */}
           <div className= {styles.content}>
-            Biodata : {biodataname} {age} {address} 
+            Biodata : {biodata2.name} {biodata2.age} {biodata2.address} 
           </div>
         </div>
       </div>
@@ -63,7 +70,7 @@ const NavbarWithStyling = ({ menu, name, age, address}) => {
         <h1 className={styles.title}>FSW 2 - {name}</h1>
         {list}
       </div>
-      <div className="{styles.about}">
+      <div className={styles.about}>
         <About name={name} age={age} address={address} />
       </div>
       <HoverButton onSelect={() => handleTriggerSelect(name)}>

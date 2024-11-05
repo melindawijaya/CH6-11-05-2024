@@ -11,20 +11,21 @@ function App() {
 
   return (
     <>
+      {/* <Navbar /> */}
       <NavbarWithStyling
         menu={listMenu}
-        name="Student"
+        name="Adi"
         age="20"
         address="Semarang"
       />
       <NavbarWithStyling
-        name="Student 2"
+        name="Budi"
         age="20"
         address="Bandung"
       />
       <NavbarWithStyling
         menu={["About you", "About me", "About us"]}
-        name="Student 3"
+        name="Cinta"
         age="20"
         address="Jakarta"
       />
